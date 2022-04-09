@@ -393,6 +393,10 @@ export const SubtitleMission = styled.p`
         ` : `color: ${palette.text_light_color };`};
     line-height: 1.4;
     box-sizing: border-box;
+
+    @media(max-width: 820px){
+        width: 90%;
+    }
 `;
 
 
@@ -412,6 +416,29 @@ export const InputTrial = styled.input`
 
     &:hover{
         background: ${ palette.main_color };
+    }
+    @media(max-width: 820px){
+        width: 250px;
+        font-size: 18px;
+        padding: 10px;
+        height: 50px;
+    }
+    @media(max-width: 650px){
+        width: 200px;
+        font-size: 16px;
+        padding: 10px;
+        height: 45px;
+    }
+    @media(max-width: 250px){
+        width: 180px;
+        font-size: 12px;
+        padding: 5px;
+        height: 40px;
+    }
+    @media(max-width: 200px){
+        font-size: 10px;
+        padding: 5px;
+        height: 25px;
     }
 `;
 export const CopyRight = styled.p`
@@ -564,9 +591,12 @@ export const ProductItem = styled.div`
     box-sizing: border-box;
 
     @media(max-width: 820px){
+        width: 90%;
+        max-width: 90%;
         height: auto;
         margin-top: 40px;
         padding: 20px;
+
     }
 `;
 
@@ -649,6 +679,9 @@ export const MissionButton = styled.button`
         color: ${ palette.main_color };
         border: 1px solid ${ palette.main_color };
     }
+    @media(max-width: 820px){
+        height: auto;
+    }
 `;
 
 export const ProductButton = styled.button`
@@ -694,5 +727,11 @@ export const ImageTab = styled.img`
         margin: 0px !important;
         width: 95%;
         margin-left: 10px;
+    }
+`;
+
+export const MissionaryText = styled.h1`
+    @media(max-width: 820px){
+        font-size: 22px;
     }
 `;

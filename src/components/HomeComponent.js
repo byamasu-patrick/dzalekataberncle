@@ -1,5 +1,5 @@
 import React from "react";
-import { BoxContainerHorizontal, BoxContent, BoxItem, BoxItemHorizontal, BoxSpaceAround, CategoriesInput, CategoryLabel, CenterHorizontalBoxItem, Checkmark, ClientImage, FooterLink, ImageCircle, ImageTab, LeftHorizontalBoxItem, ListItemVertical, MissionButton, ProductBox, ProductButton, ProductDescription, ProductDetails, ProductImage, ProductItem, ProductTitle, RightHorizontalBoxItem, SearchBox, SearchButton, SearchInput, SectionBoxItem, SubscribeButton, Subtitle, SubtitleMission, UnorderedList } from "../shared/common";
+import { BoxContainerHorizontal, BoxContent, BoxItem, BoxItemHorizontal, BoxSpaceAround, CategoriesInput, CategoryLabel, CenterHorizontalBoxItem, Checkmark, ClientImage, FooterLink, ImageCircle, ImageTab, LeftHorizontalBoxItem, ListItemVertical, MissionaryText, MissionButton, ProductBox, ProductButton, ProductDescription, ProductDetails, ProductImage, ProductItem, ProductTitle, RightHorizontalBoxItem, SearchBox, SearchButton, SearchInput, SectionBoxItem, SubscribeButton, Subtitle, SubtitleMission, UnorderedList } from "../shared/common";
 import TopHome from "./home/TopHome";
 import amazon from '../logos/amazon.png';
 import google from '../logos/google.png';
@@ -71,7 +71,7 @@ const Home = ({ extended }) => {
            <BoxContent height={'auto'} bg_img={{ imagUrl: dzalekatab ,  bg_size: '100% 100%', }}>
                 <SectionBoxItem className='grow-1 center-self-alignment' style={{ justifyContent: 'center'}}>
                     <ProductItem height="auto" width="60%">
-                        <h1 style={{ alignSelf: 'center'}}>MISSIONARY CENTER</h1>
+                        <MissionaryText style={{ alignSelf: 'center'}}>MISSIONARY CENTER</MissionaryText>
                         <SubtitleMission style={{color: '#000', textAlign: 'left', letterSpacing: '1.5px', width: '70%', fontSize: '18px'}}>We believe that the return of Jesus Christ as repeatedly promised in the Holy Scripture is close at hand. The promise came from the lips of our Lord Himself, »… and if I go and prepare a place for you, I will come again, and receive you unto myself, that where I am, there you may be also.« (Jn. 14:1-3).</SubtitleMission>
                         <SubtitleMission style={{color: '#000', textAlign: 'left', letterSpacing: '1.5px', width: '70%', fontSize: '18px'}}>Our Lord emphasised that we should watch the signs of the time. »So likewise ye, when ye shall see all these things, know that it is near, even at the door...</SubtitleMission>
                         <MissionButton type="button">Read More...</MissionButton>

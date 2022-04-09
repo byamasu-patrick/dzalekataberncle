@@ -9,8 +9,8 @@ const Footer = () => {
             <FooterSection>
                 <BoxContainerHorizontal isFooter={true}>
                     <BoxItemHorizontal>
-                        <h2>About US</h2>
-                        <p>We are missionary center of Jesus Christ in Malawi<br/>
+                        <h2 style={{marginLeft: "20px"}}>About US</h2>
+                        <p style={{padding: "20px"}}>We are missionary center of Jesus Christ in Malawi<br/>
                         Dzaleka Tabernacle, preaching the gospel to  <br/>
                         prepare christians of this last age for the <br />
                         rupture through batism of the Holy Spirit</p>
