@@ -1,11 +1,14 @@
 import './App.css';
-import Main from './components/MainComponent';
+import React, { useState } from 'react';
+import { RoutesLink } from './RoutesLink';
 
+ 
 const App = () => {
+ 
   return (
-    <div className="app">
-      <Main />
-    </div>
+    <>
+      <RoutesLink />
+    </>
   );
 }
 

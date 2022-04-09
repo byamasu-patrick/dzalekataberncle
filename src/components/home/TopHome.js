@@ -1,16 +1,18 @@
 import React from "react";
 import { BoxContainerHorizontal, BoxItem, BoxItemHorizontal, HomeHeader, HomeHeading, InputTrial, Subtitle } from "../../shared/common";
-import bg from '../../bg.jpg';
+import bg from '../../bg.jpeg';
+import { useNavbarContext } from "../../context.api/NavbarContextProvider";
 
 const TopHome = () => {
+    const isNavbarExteded = useNavbarContext();
     return (
         <>
-            <HomeHeader url={ bg }>
+            <HomeHeader url={ bg } isExtended={ isNavbarExteded }>
                 <BoxContainerHorizontal bg_img={true} height={'100%'}> 
                     <BoxItem>
-                        <HomeHeading>Your Search For Knowledge Base Software Ends Here</HomeHeading>
-                        <Subtitle>Helpjuice’s easy-to-use and most powerful knowledge base software is designed from the ground up to help you scale your customer support, and, collaborate better with your team.</Subtitle>
-                        <InputTrial type='submit' value='14 Days Trial'/>
+                        <HomeHeading>Missionary Center Of Jesus Christ in Malawi Dzaleka Tabernacle</HomeHeading>
+                        <Subtitle>This good news of the kingdom will be preached throughout the world as a testimony to all nations. Then will come the end.</Subtitle>
+                        <InputTrial type='submit' value='Subscribe Notification'/>
                     </BoxItem> 
                 </BoxContainerHorizontal>
             </HomeHeader>

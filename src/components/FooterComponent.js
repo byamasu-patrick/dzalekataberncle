@@ -7,47 +7,32 @@ const Footer = () => {
     return (
         <React.Fragment>
             <FooterSection>
-                <BoxContainerHorizontal>
+                <BoxContainerHorizontal isFooter={true}>
                     <BoxItemHorizontal>
                         <h2>About US</h2>
                         <p>We are an online business company focused <br/>
                             on provide a good quality of product to <br/>
                             satisfy our customer need </p>
-                        <h2>Contact US</h2>
-                        <ContactParagraph>
-                            <Icon className="fa fa-phone"></Icon>  +2659966681449                            
-                        </ContactParagraph>
-                        <ContactParagraph>
-                            <Icon className="fa fa-envelope-open"></Icon>  ptrckbyamasu@gmail.com 
-                        </ContactParagraph>
+                       
                     </BoxItemHorizontal>
                     <BoxItemHorizontal>
-                        <h2>Informations</h2>
+                        <h2>Frequently Asked Question</h2>
                         <UnorderedList p_l={true}>
-                            <ListItemVertical><FooterLink>Order Products</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Search</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Testimonials</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Blogs</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Event</FooterLink></ListItemVertical>
+                            <ListItemVertical><FooterLink>Streaming FAQ</FooterLink></ListItemVertical>
+                            <ListItemVertical><FooterLink>Sermon Translation FAQ</FooterLink></ListItemVertical>
+                            <ListItemVertical><FooterLink>Notification Subscription</FooterLink></ListItemVertical>
                         </UnorderedList>
                     </BoxItemHorizontal>
                     <BoxItemHorizontal>
                         <h2>Helpful Links</h2>
-                        <UnorderedList p_l={true}>
-                            <ListItemVertical><FooterLink>Services</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Customer Support</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Shipping Rates</FooterLink></ListItemVertical>
-                            <ListItemVertical><FooterLink>Your Account</FooterLink></ListItemVertical>
+                        <UnorderedList p_l={true} isFooter={true}>
+                            <ListItemVertical><FooterLink>Broadcast</FooterLink></ListItemVertical>
+                            <ListItemVertical><FooterLink>Download Sermons</FooterLink></ListItemVertical>
                             <ListItemVertical><FooterLink>Terms and Conditions</FooterLink></ListItemVertical>
                             <ListItemVertical><FooterLink>Privacy Policy</FooterLink></ListItemVertical>
                         </UnorderedList>
                     </BoxItemHorizontal>
-                    <BoxItemHorizontal>
-                        <h2>Subscribe More Info</h2>
-                        <InputMoreInfo placeholder="someone@gmail.com"/><br/>
-                        <SubscribeButton>Subscribe</SubscribeButton>
-
-                    </BoxItemHorizontal>
+                   
                 </BoxContainerHorizontal>                
                 <HorizontalLine/> 
                 <BoxContent>

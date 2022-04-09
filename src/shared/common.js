@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import * as palette from './variables';
 
@@ -19,24 +20,77 @@ export const BoxContainerHorizontal = styled.div`
         ` : '' 
     }
 
+    @media(max-width: 820px){
+        ${ (props) => props.isFooter ? `
+            flex-direction: column; 
+            align-items: center;
+            padding-top: 40px;
+            ` : "" };
+    }
+
 `;
 export const BoxItemHorizontal = styled.div`
     display: flex;
     ${ props => props.grow ? "flex-grow: 1;" : "" } 
     flex-direction: column;
 `;
+/*
+
+
+*/
 
 export const Navbar = styled.nav`
     width: 100%;
     background: ${ palette.main_color };
-    height: ${ props => props.height };
+    height: ${ props => (props.height) };
+    position: fixed;
+    top: 0px;
+
+    @media(max-width: 820px){
+        width: 100%;
+        height: ${ props => (props.isExended ? '90vh' : props.height) };
+    }
+
 `;
 export const NavbarBrand = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 200px !important;
+    align-items: center; 
+
+    @media(max-width: 820px){
+        width: auto;
+    }
 `;
+
+export const NavbarExtendedContainer = styled.div`
+    width: 100%;
+    height: 90px;
+    display: flex;
+`;
+
+export const NavbarInnerContainer = styled.div`
+    width: 100%;
+    height: 90px;
+    display: flex;
+`;
+export const OpenLinkButton = styled.button`
+    width: 70px;
+    height: 50px;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    @media(min-width: 820px){
+        display: none;
+    }
+`;
+export const OpenLinkSpan = styled.span`
+    height: 100%;
+    width: 100%;
+    font-size: 35px;
+`;
+
 export const LogoImage = styled.img`
     margin: 10px;
     width: ${ props => props.width };
@@ -50,6 +104,10 @@ export const NavbarItem = styled.div`
 export const UnorderedList = styled.ul`
     list-style-type: none;
     ${ props => props.p_l ? "padding-left: 0px;" : ""}
+
+    @media(max-width: 820px){
+        ${ props => props.p_l ? "padding: 0px;" : ""}
+    }
 `;
 export const ListItemHorizontal = styled.li`
     display: inline;
@@ -57,6 +115,10 @@ export const ListItemHorizontal = styled.li`
     font-family: ${ props => props.fontFamily };
     box-sizing: border-box;
     margin: 10px;
+    @media(max-width: 820px){
+        display: ${props => props.navbarLink ? "none" : "flex"};
+        ${props => props.isFooter ? "margin: 0px;" : ""}
+    }
 `;
 export const NavLink = styled.a`
     color: ${ palette.text_light_color };
@@ -74,6 +136,12 @@ export const NavLink = styled.a`
         color: ${ palette.primary_color };
         border-bottom: 2px solid ${ palette.primary_color };
     }
+    @media(max-width: 820px){
+        display: 10px;
+        &.active{
+            border: none;
+        }
+    }
 `;
 
 export const NavLinkAuth = styled(NavLink)`
@@ -86,6 +154,21 @@ export const NavLinkAuth = styled(NavLink)`
     &:hover{
         color: ${  props => props.signup ? palette.main_color : palette.text_light_color };
         background: ${ props => props.signup ? palette.text_light_color :  palette.tertiary_color };
+        cursor: pointer;
+    }
+`;
+export const NavLinkLanguage = styled(NavLink)`
+    background: ${ palette.tertiary_color };
+    color: ${ palette.text_light_color };
+    border-radius: 3px;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 400;
+
+    &:hover{
+        color: ${ palette.main_color };
+        background: ${ palette.text_light_color };
         cursor: pointer;
     }
 `;
@@ -103,6 +186,11 @@ export const FooterSection = styled.footer`
 
 export const ListItemVertical = styled(ListItemHorizontal)`
     display: block;
+
+    @media(max-width: 820px){
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
 `;
 export const FooterLink = styled(NavLink)`
     color: ${ palette.main_color };
@@ -123,6 +211,13 @@ export const BoxContent = styled.div`
     display: flex;
     ${ props => props.height ? `height: ${ props.height };` : ''}
     ${ props => props.bg_img ? `background-image: url('${ props.bg_img.imagUrl }'); background-size: ${ props.bg_img.bg_size }` : ''}
+
+    @media(max-width: 820px){
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 50px;
+    }
+    
 `;
 export const BoxSocialMedia = styled(BoxContainerHorizontal)`
     
@@ -131,6 +226,9 @@ export const BoxSocialMedia = styled(BoxContainerHorizontal)`
         justify-content: flex-end;
         flex-grow: 1;
     ` : '' };
+    @media(max-width: 820px){
+        justify-content: center;
+    }
 `;
 export const SocialMedia = styled.li`
     background: ${ palette.main_color };
@@ -225,14 +323,30 @@ export const HomeHeader = styled.div`
     background-image: url('${ props => props.url }');
     background-size: 100% 100%;
     margin-bottom: 70px;
+    margin-top: 95px;
+    @media(max-width: 820px){
+        margin-top: ${props => props.isExtended ? "60vh": "95px"};
+    }
 `;
 
 export const HomeHeading = styled.h1`
-    max-width: 880px;
+    max-width: 900px;
     font-weight: 900;
-    font-size: 3.4em;
+    font-size: 45px;
     text-align: center;
     margin: 0 auto 20px;
+    color: ${ palette.text_light_color };
+    @media(max-width: 820px){        
+        font-size: 30px;
+    }
+    @media(max-width: 450px){
+        font-size: 25px;
+    }
+`;
+export const HeadingBrand = styled.h1`
+    font-weight: 900;
+    font-size: 1.2em;
+    text-align: center;
     color: ${ palette.text_light_color };
 `;
 
@@ -245,9 +359,32 @@ export const BoxItem = styled.div`
 `;
 
 export const Subtitle = styled.p`
-    font-size: 1.4rem;
+    font-size: 22px;
     color: #626262;
     margin: 0 auto 42px;
+    text-align: center;
+    height: auto;
+    max-width: 80%;
+    ${ props => props.textColor === true ? `
+        color: ${ palette.main_color };
+        max-width: 90%;
+        ` : `color: ${palette.text_light_color };`};
+    line-height: 1.4;
+    box-sizing: border-box;
+
+    @media(max-width: 820px){
+        font-size: 22px;
+        max-width: 600px;
+    }
+    @media(max-width: 450px){
+        font-size: 18px;
+        max-width: 300px;
+    }
+`;
+export const SubtitleMission = styled.p`
+    font-size: 1.8vw;
+    color: #626262;
+    margin: 0 auto 20px;
     text-align: center;
     max-width: 880px;
     ${ props => props.textColor === true ? `
@@ -257,6 +394,7 @@ export const Subtitle = styled.p`
     line-height: 1.4;
     box-sizing: border-box;
 `;
+
 
 export const InputTrial = styled.input`
     max-width: 400px;
@@ -288,13 +426,26 @@ export const CopyRight = styled.p`
 export const SectionBoxItem = styled.div`
     display: flex;
     flex-direction: column;
+    ${ props => props.hoffman ? "flex-grow: 2;" : "" }
     ${ props => props.grow ? 'flex-grow: 1;' : '' }
+
+    @media(max-width: 820px){
+        height: auto;
+        padding-top: 60px;
+    }
 `;
 export const CenterHorizontalBoxItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+
+    @media(max-width: 820px){
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        margin-top: 40px;
+    }
 `;
 export const LeftHorizontalBoxItem = styled.div`
     display: flex;
@@ -411,6 +562,12 @@ export const ProductItem = styled.div`
     padding: 0px;
     cursor: pointer;
     box-sizing: border-box;
+
+    @media(max-width: 820px){
+        height: auto;
+        margin-top: 40px;
+        padding: 20px;
+    }
 `;
 
 export const ProductImage = styled.img`
@@ -469,6 +626,31 @@ export const ProductDetails = styled.button`
         border: 1px solid ${ palette.main_color };
     }
 `;
+export const MissionButton = styled.button`
+    max-width: 200px;
+    height: 30px;
+    color: ${ palette.text_light_color };
+    background: ${ palette.main_color };
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    border: none;
+    margin-top: 14px;
+    letter-spacing: 1px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-self: center;
+    
+
+    &:hover{
+        background: ${ palette.text_light_color };
+        color: ${ palette.main_color };
+        border: 1px solid ${ palette.main_color };
+    }
+`;
+
 export const ProductButton = styled.button`
     
     height: 30px;
@@ -494,4 +676,23 @@ export const ImageCircle = styled.img`
     height: 150px;
     border-radius: 49%;
     margin: 10px 30px;
+`;
+
+export const Container = styled.div`
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    ${ props => props.bg_color ? `background: ${ props.bg_color };` : ""}
+`;
+export const ImageTab = styled.img`
+    width: 400px;
+    height: 60%;
+    align-self: center;
+    margin-left: 30px;
+    @media(max-width: 820px){
+        margin: 0px !important;
+        width: 95%;
+        margin-left: 10px;
+    }
 `;
